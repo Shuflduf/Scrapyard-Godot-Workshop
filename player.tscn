@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg6idcw5deq4i"]
+
+[ext_resource type="Texture2D" uid="uid://nmwnvbn7ykj1" path="res://icon.svg" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://fnxavvp7egbg" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://bm61cn1x0lff8" path="res://ball_attack.tscn" id="3_i3pqv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sh265"]
+radius = 64.0
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+script = ExtResource("1_onrkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4flbx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_sh265")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[node name="BallAttack" parent="." instance=ExtResource("3_i3pqv")]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwdwicqoqflcv"]
+
+[ext_resource type="PackedScene" uid="uid://cg6idcw5deq4i" path="res://player.tscn" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://bx03in6vcnbif" path="res://enemy_spawner.tscn" id="3_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://w5tseijnmc50" path="res://obstacle_spawner.tscn" id="3_tlwt5"]
+
+[node name="World" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_f3sb7")]
+
+[node name="ObstacleSpawner" parent="." instance=ExtResource("3_tlwt5")]
+
+[node name="EnemySpawner" parent="." instance=ExtResource("3_aqk2v")]
